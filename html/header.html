@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>헤더 영역</title>
+  <title>HONEY TIP</title>
   <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
@@ -12,26 +12,70 @@
   <header>
     <div class="container">
       <h1>
-        <button>SU</button>
+        <button>HONEY TIP</button>
       </h1>
       <nav>
         <ul>
           <li>
-            <button>About</button>
+            <button data-animation-scroll="true" data-target="#about">
+              사이트 소개
+            </button>
           </li>
           <li>
-            <button>Features</button>
+            <button data-animation-scroll="true" data-target="#features">
+              꿀팁 모음
+            </button>
           </li>
           <li>
-            <button>Portfolio</button>
+            <button data-animation-scroll="true" data-target="#portfolio">
+              카테고리
+            </button>
           </li>
           <li>
-            <button>Contact</button>
+            <button data-animation-scroll="true" data-target="#contact">
+              문의하기
+            </button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
   <!-- //end header -->
+
+  <!-- 각 섹션들 추가 -->
+  <section id="about">
+    <h2>사이트 소개</h2>
+    <p>이곳은 HONEY TIP 사이트의 사이트 소개 섹션입니다.</p>
+  </section>
+
+  <section id="features">
+    <h2>꿀팁 모음</h2>
+    <p>이곳은 HONEY TIP 사이트의 꿀팁 모음 섹션입니다.</p>
+  </section>
+
+  <section id="portfolio">
+    <h2>카테고리</h2>
+    <p>이곳은 HONEY TIP 사이트의 카테고리 섹션입니다.</p>
+  </section>
+
+  <section id="contact">
+    <h2>문의하기</h2>
+    <p>이곳은 HONEY TIP 사이트의 문의하기 섹션입니다.</p>
+  </section>
+  <!-- //end 각 섹션들 -->
+
+  <script>
+    // 스크롤 애니메이션 처리 (선택사항)
+    document.querySelectorAll('button[data-animation-scroll="true"]').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
